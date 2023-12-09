@@ -51,7 +51,7 @@ onMounted(() => {
   <div class="container">
     <AddTaskInput @add="addtask"></AddTaskInput>
     <SwitchSelector @changeoption="i => showCompletedTasks = !!i" :selected_option="showCompletedTasks ? 1 : 0" :options="['Pendientes', 'Completadas']"></SwitchSelector>
-    <TaskList @updateelement="updateTask" @markfinished="mark_finished" :tasks="showCompletedTasks ? completed_tasks : pending_tasks" @deleteelement="deleteElement"></TaskList>
+    <TaskList :try_text="showCompletedTasks ? 'marcando una tarea como completada' : 'agregando una nueva tarea'" @updateelement="updateTask" @markfinished="mark_finished" :tasks="showCompletedTasks ? completed_tasks : pending_tasks" @deleteelement="deleteElement"></TaskList>
   </div>
 </template>
 
