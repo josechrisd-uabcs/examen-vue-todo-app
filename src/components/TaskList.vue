@@ -17,7 +17,7 @@ const emits = defineEmits<{
   (e: 'markfinished', id: number, marked: boolean): void
 }>()
 
-const filtered_elems = computed(() => props.tasks.filter(e => e.task.toLowerCase().includes(filtro.value.toLowerCase())))
+const filtered_elems = computed(() => filtro.value.trim() != '' ? props.tasks.filter(e => e.task.toLowerCase().includes(filtro.value.trim().toLowerCase())) : props.tasks)
 
 </script>
 
